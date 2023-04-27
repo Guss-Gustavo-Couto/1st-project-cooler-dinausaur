@@ -1,10 +1,10 @@
 
 const images = [  
-    {src: "./images/background-1.png", x: 1200, speed: 0.35},
-    {src: "./images/background-2.png", x: 1200, speed: 0.8},
-    {src: "./images/background-3.png", x: 1200, speed: 1.6},
-    {src: "./images/background-4.png", x: 1200, speed: 3},
-    {src: "./images/background-5.png", x: 1200, speed: 1},
+    {src: "docs/assets/images/background-1.png", x: 1200, speed: 0.35},
+    {src: "docs/assets/images/background-2.png", x: 1200, speed: 0.8},
+    {src: "docs/assets/images/background-3.png", x: 1200, speed: 1.6},
+    {src: "docs/assets/images/background-4.png", x: 1200, speed: 3},
+    {src: "docs/assets/images/background-5.png", x: 1200, speed: 1},
 ];
 
 

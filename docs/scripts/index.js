@@ -11,10 +11,10 @@ const startButton = document.getElementById("start");
 //Create the Player
 
 const playerImages = [
-  "./images/player-01.png",
-  "./images/player-02.png",
-  "./images/player-03.png",
-  "./images/player-04.png",
+  "docs/assets/images/player-01.png",
+  "docs/assets/images/player-02.png",
+  "docs/assets/images/player-03.png",
+  "docs/assets/images/player-04.png",
 ];
 
 const player = new Component(

@@ -1,5 +1,5 @@
 const playerImage = new Image();
-playerImage.src = "./images/dinausaur-moves.png";
+playerImage.src = "docs/assets/images/dinausaur-moves.png";
 const spriteWidth = 575; // Width Crop from total image
 const spriteHeight = 523; // Height Crop from total image
 let frameX = 0; /// Decides column Of animation

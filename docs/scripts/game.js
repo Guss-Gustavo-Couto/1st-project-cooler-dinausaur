@@ -12,25 +12,25 @@ class Game {
     this.livesArray = [];
     this.enemySpeed = 0;
     this.enemyImages = [
-      "./images/enemy-01.png",
-      "./images/enemy-02.png",
-      "./images/enemy-03.png",
+      "docs/assets/images/enemy-01.png",
+      "docs/assets/images/enemy-02.png",
+      "docs/assets/images/enemy-03.png",
     ];
 
     //Crash Audio
-    this.crashWithAudio = new Audio("../audio/ough.mp3");
+    this.crashWithAudio = new Audio("docs/assets/audio/ough.mp3");
     this.crashWithAudio.loop = false;
 
     //Game Over Audio
-    this.gameOverAudio = new Audio("../audio/retrogamesound.wav");
+    this.gameOverAudio = new Audio("docs/assets/audio/retrogamesound.wav");
     this.gameOverAudio.loop = false;
 
     //Start Audio
-    this.startAudio = new Audio("../audio/letsgo.mp3");
+    this.startAudio = new Audio("docs/assets/audio/letsgo.mp3");
     this.startAudio.loop = false;
 
     //Jump Audio
-    this.jumpAudio = new Audio("../audio/jumping.wav");
+    this.jumpAudio = new Audio("docs/assets/audio/jumping.wav");
     this.jumpAudio.loop = false;
   }
 
@@ -110,7 +110,7 @@ class Game {
         this.livesArray.push("X");
         let lifeIndex = this.livesArray.length;
         let lifeImage = document.getElementById(`life${lifeIndex}`);
-        lifeImage.src = "./images/blank-heart.png";
+        lifeImage.src = "docs/assets/images/blank-heart.png";
         //animation
         runRightAnim = false;
         gameOverAnim = false;
