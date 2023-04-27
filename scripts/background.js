@@ -26,8 +26,6 @@ for (let i = 0; i < images.length; i++) {
 function startAnimation() {
 
     
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpar canvas
-    
     for (let i = 0; i < loadedImages.length; i++) {
       const img = loadedImages[i].img;
       const x = loadedImages[i].x;
