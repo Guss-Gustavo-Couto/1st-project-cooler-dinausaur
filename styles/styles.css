@@ -1,0 +1,46 @@
+*{
+    background-color: #6B88FE ;
+}
+
+.total{
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-content: center ;
+    vertical-align: bottom;
+    margin: 25px 25px 5px 25px;
+}
+
+#start{
+    display:block;
+    margin: auto;
+    padding: 20px 30px 20px 30px;
+    border: 4px;
+    border-color: black;
+    font-weight: bolder;
+    font-size: larger;
+    background-color:lightgray;
+}
+
+#timer{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-justify: right;
+    margin-right: 15px;
+    padding-top: 0px;
+}
+
+#level{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    text-justify: right;
+    margin-right: 15px;
+    padding-top: 0px;
+}
+
+.lives {
+    margin-top: 25px;
+    margin-left: 25px;
+}
