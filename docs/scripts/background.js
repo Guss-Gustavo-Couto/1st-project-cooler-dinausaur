@@ -1,8 +1,9 @@
 const images = [
   { src: "docs/assets/images/background-1.png", x: 1200, speed: 0.35 },
+  
+  { src: "docs/assets/images/background-4.png", x: 1200, speed: 2.7 },
+  { src: "docs/assets/images/background-3.png", x: 1200, speed: 1.8 },
   { src: "docs/assets/images/background-2.png", x: 1200, speed: 0.8 },
-  { src: "docs/assets/images/background-4.png", x: 1200, speed: 3 },
-  { src: "docs/assets/images/background-3.png", x: 1200, speed: 2.3 },
   { src: "docs/assets/images/background-5.png", x: 1200, speed: 1 },
   
 ];
