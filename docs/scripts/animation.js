@@ -5,7 +5,7 @@ const spriteHeight = 523; // Height Crop from total image
 let frameX = 0; /// Decides column Of animation
 let frameY = 4; /// Decides Row Of animation
 let gameFrame = 0;
-const staggeredFrames = 5; /// Decides velocity of passing Frames
+const staggeredFrames = 65; /// Decides velocity of passing Frames
 
 //
 let runRightAnim = false;
@@ -14,6 +14,7 @@ let jumpAnim = false;
 let crouchAnim = false;
 let collisionAnim = false;
 let gameOverAnim = false;
+let swordAnim = false;
 
 //// RUN FOWARD ANIMATION
 function runAnimate() {
@@ -26,8 +27,8 @@ function runAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
     if (gameFrame % staggeredFrames == 0) {
       if (frameX < 6) frameX++;
@@ -49,18 +50,17 @@ function jumpAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
     if (gameFrame % staggeredFrames == 0) {
-      if (frameX < 6) frameX++;
+      if (frameX < 1) frameX++;
       else frameX = 0;
     }
   }
 
   gameFrame++;
 }
-// jumpAnimate()
 
 ////GETS DOWN ANIMATION
 function downAnimate() {
@@ -73,11 +73,11 @@ function downAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
-    if (gameFrame % staggeredFrames == 0) {
-      if (frameX < 6) frameX++;
+    if (gameFrame % 5 == 0) {
+      if (frameX < 1) frameX++;
       else frameX = 0;
     }
   }
@@ -97,11 +97,11 @@ function backAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
-    if (gameFrame % staggeredFrames == 0) {
-      if (frameX < 6) frameX++;
+    if (gameFrame % 5 == 0) {
+      if (frameX < 1) frameX++;
       else frameX = 0;
     }
   }
@@ -121,11 +121,11 @@ function crashAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
-    if (gameFrame % staggeredFrames == 0) {
-      if (frameX < 6) frameX++;
+    if (gameFrame % 5 == 0) {
+      if (frameX < 1) frameX++;
       else frameX = 0;
     }
   }
@@ -145,23 +145,38 @@ function gameOverAnimate() {
       spriteHeight,
       player.x,
       player.y,
-      150,
-      150
+      250,
+      250
     );
-    if (gameFrame % staggeredFrames == 0) {
-      if (frameX < 6) frameX++;
+    if (gameFrame % 5 == 0) {
+      if (frameX < 1) frameX++;
       else frameX = 0;
     }
   }
 
   gameFrame++;
 }
-// gameOverAnimate()
 
-/*
-runAnimate --> NORMAL / CORRER // SETA DTA  y = 0
-jumpAnimate --> SALTAR // SETA UP           y = 1
-downAnimate --> Baixar                      y = 2
-backAnimate --> PARA TRÀS // SETA BACK      y = 3
-crashAnimate --> CHOCAR // Colision	        y = 4
-gameOverAnimate --> GAME OVER               y = 5  */
+/// SWORD SPECIAL FEATURE
+function swordAnimate() {
+  if (swordAnim) {
+    ctx.drawImage(
+      playerImage,
+      frameX * spriteWidth,
+      5 * spriteHeight,
+      spriteWidth,
+      spriteHeight,
+      player.x,
+      player.y,
+      250,
+      250
+    );
+    if (gameFrame % 5 == 0) {
+      if (frameX < 1) frameX++;
+      else frameX = 0;
+    }
+  }
+
+  gameFrame++;
+}
+

@@ -37,7 +37,7 @@ class Component {
         this.jumpingTop = true;
       }
 
-      if (this.y >= 320 && this.jumpingTop === true) {
+      if (this.y >= 235 && this.jumpingTop === true) {
         this.jumpingTop = false;
         this.isJumping = false;
       }

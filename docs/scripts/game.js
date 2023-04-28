@@ -54,6 +54,7 @@ class Game {
     downAnimate();
     jumpAnimate();
     crashAnimate();
+    swordAnimate();
     this.updateEnemies();
     this.checkGameOver();
   };
@@ -79,14 +80,14 @@ class Game {
       this.enemies[i].draw(); // Continue to Draw Enemy
     }
 
-    if (this.frames % 800 === 0) {
+    if (this.frames % 600 === 0) {
       let x = 1400; /*  + Math.floor(Math.random() * 601) + 200 */
       let height = 359;
 
       // Bottom Obstacle
       let enemyImage =
         this.enemyImages[
-          Math.floor(Math.random() * (this.enemyImages.length - 1))
+          Math.floor(Math.random() * (this.enemyImages.length))
         ];
       this.enemies.push(
         new Component(
@@ -106,7 +107,7 @@ class Game {
     for (let i = 0; i < this.enemies.length; i++) {
       if (this.player.crashWith(this.enemies[i])) {
         this.enemies.splice(i, 1);
-        ~this.crashWithAudio.play();
+        this.crashWithAudio.play();
         this.livesArray.push("X");
         let lifeIndex = this.livesArray.length;
         let lifeImage = document.getElementById(`life${lifeIndex}`);
@@ -117,11 +118,12 @@ class Game {
         jumpAnim = false;
         runLeftAnim = false;
         crouchAnim = false;
+        swordAnim = false;
         collisionAnim = true;
         setTimeout(() => {
           collisionAnim = false;
           runRightAnim = true;
-        }, 900);
+        }, 500);
       }
     }
     if (elapsedTime === 60000) {
@@ -135,16 +137,17 @@ class Game {
 
     if (this.livesArray.length > 2) {
       elapsedTime = "--:--";
-
-      ctx.fillStyle = "red";
+      this.ctx.fillStyle = "red";
       this.ctx.font = "72px Arial";
       this.ctx.fillText("GAME OVER", this.width / 3.3, this.height / 2);
+      
       //animation
       runRightAnim = false;
       jumpAnim = false;
       runLeftAnim = false;
       crouchAnim = false;
       collisionAnim = false;
+      swordAnim = false;
       this.stop();
       this.gameOverAudio.play();
       startAnimation();

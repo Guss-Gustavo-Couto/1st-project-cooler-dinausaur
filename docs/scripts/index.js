@@ -19,17 +19,19 @@ const playerImages = [
 
 const player = new Component(
   70,
-  320,
+  235,
   220,
   280,
-  "./images/player-01.png",
+  "./docs/assets/images/player-01.png",
   ctx,
   0
 );
 
 let game;
-function startGame() {
+
+startButton.onclick = function(){
   console.log("starting");
+  runRightAnim = true;
   game = new Game(ctx, canvas.width, canvas.height, player);
   game.start();
   setInterval(updateTimer, 10);
@@ -38,17 +40,10 @@ function startGame() {
     div.style.display = "block";
   } else {
     div.style.display = "none";
-  }
+}
 }
 
 
-document.addEventListener("keydown", function (event) {
-  if (event.code === "Space") {
-
-    startGame();
-    runRightAnim = true;
-  }
-});
 
 // Set Timer
 let elapsedTime = 0;
@@ -78,18 +73,19 @@ function updateTimer() {
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space" || event.code === `ArrowUp`) {
     player.isJumping = true;
-    game.jump();
+   
     //animation
     runRightAnim = false;
     runLeftAnim = false;
     crouchAnim = false;
     collisionAnim = false;
     gameOverAnim = false;
+    swordAnim = false;
     jumpAnim = true;
     setTimeout(() => {
       jumpAnim = false;
       runRightAnim = true;
-    }, 2000);
+    }, 1500);
   }
 });
 
@@ -104,13 +100,14 @@ document.addEventListener("keydown", (e) => {
       collisionAnim = false;
       gameOverAnim = false;
       jumpAnim = false;
+      swordAnim = false;
       runLeftAnim = true;
       break;
 
     case "ArrowRight":
       player.speedX += 0.2;
       break;
-
+      
     case "ArrowDown":
       //animation
       runRightAnim = false;
@@ -118,7 +115,18 @@ document.addEventListener("keydown", (e) => {
       gameOverAnim = false;
       jumpAnim = false;
       runLeftAnim = false;
+      swordAnim = false;
       crouchAnim = true;
+      break;
+
+      case "s":
+      //animation
+      runRightAnim = false;
+      collisionAnim = false;
+      gameOverAnim = false;
+      jumpAnim = false;
+      runLeftAnim = false;
+      crouchAnim = false;
       break;
   }
 });
@@ -128,6 +136,7 @@ document.addEventListener("keyup", () => {
   player.speedX = 0;
   crouchAnim = false;
   runLeftAnim = false;
+  swordAnim = false;
   if (!jumpAnim) {
     runRightAnim = true;
   }
